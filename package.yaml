@@ -1,0 +1,60 @@
+name:                tct-stack
+version:             0.1.0.0
+github:              "githubuser/tct-stack"
+license:             BSD3
+author:              "Author name here"
+maintainer:          "example@example.com"
+copyright:           "2018 Author name here"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/tct-stack#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+- http-conduit
+- process
+- directory
+- aeson
+- unordered-containers
+- system-filepath
+- MissingH
+- text
+- transformers
+
+library:
+  source-dirs: src
+
+executables:
+  tct-stack-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    - -Werror
+    dependencies:
+    - tct-stack
+
+tests:
+  tct-stack-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - tct-stack

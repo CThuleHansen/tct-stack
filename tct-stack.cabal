@@ -1,0 +1,93 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: cc07f2005231c0aea3622a747d5084f2e9394f71caef1660d64a6df04fb91bd3
+
+name:           tct-stack
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/tct-stack#readme>
+homepage:       https://github.com/githubuser/tct-stack#readme
+bug-reports:    https://github.com/githubuser/tct-stack/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    ChangeLog.md
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/tct-stack
+
+library
+  exposed-modules:
+      JSConverter
+      Lib
+      ScenarioRunner
+  other-modules:
+      Paths_tct_stack
+  hs-source-dirs:
+      src
+  build-depends:
+      MissingH
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , http-conduit
+    , process
+    , system-filepath
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
+
+executable tct-stack-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_tct_stack
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N -Wall -Werror
+  build-depends:
+      MissingH
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , http-conduit
+    , process
+    , system-filepath
+    , tct-stack
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
+
+test-suite tct-stack-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_tct_stack
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      MissingH
+    , aeson
+    , base >=4.7 && <5
+    , bytestring
+    , directory
+    , http-conduit
+    , process
+    , system-filepath
+    , tct-stack
+    , text
+    , transformers
+    , unordered-containers
+  default-language: Haskell2010
